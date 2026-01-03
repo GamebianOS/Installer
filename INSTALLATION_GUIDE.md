@@ -222,7 +222,7 @@ If you need the LXQt desktop:
 ## What Gets Installed
 
 The installer installs:
-- ✅ Debian Bookworm base system
+- ✅ Debian 13 "Trixie" base system
 - ✅ Linux kernel with gaming optimizations
 - ✅ Steam and gaming tools (MangoHud, Gamemode, etc.)
 - ✅ LXQt desktop environment

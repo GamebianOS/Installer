@@ -82,7 +82,7 @@ sudo ./build-iso.sh
 ## What Happens During Build?
 
 1. **Configuration** (1-2 min) - Sets up live-build
-2. **Bootstrap** (5-10 min) - Downloads base Debian system
+2. **Bootstrap** (5-10 min) - Downloads base Debian 13 "Trixie" system
 3. **Chroot Setup** (2-5 min) - Prepares build environment
 4. **Package Installation** (20-60 min) - Installs all packages
 5. **ISO Creation** (5-10 min) - Creates bootable ISO

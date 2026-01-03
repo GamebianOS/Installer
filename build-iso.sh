@@ -59,7 +59,7 @@ fi
 echo "⚙️  Step 1: Configuring live-build..."
 lb config \
     --architectures amd64 \
-    --distribution bookworm \
+    --distribution trixie \
     --binary-images iso-hybrid \
     --bootappend-live "boot=live components quiet splash" \
     --debian-installer none \

@@ -5,7 +5,7 @@ echo "📦 Installing Calamares installer..."
 
 # Install Calamares from backports for newer version
 apt update
-apt install -y -t bookworm-backports calamares
+apt install -y -t trixie-backports calamares
 
 # Remove default configurations
 rm -rf /etc/calamares/*

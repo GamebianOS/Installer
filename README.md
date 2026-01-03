@@ -4,7 +4,8 @@ A Qt-based Calamares installer for GamebianOS, a Steam-first gaming Linux distri
 
 ## Overview
 
-GamebianOS is a Debian-based Linux distribution optimized for gaming, featuring:
+GamebianOS is a Debian 13 "Trixie"-based Linux distribution optimized for gaming, featuring:
+- **Based on Debian 13.2 "Trixie"** (released November 2025) - Latest stable Debian with updated software and hardware support
 - **Steam-first experience**: Boots directly into Steam Big Picture mode
 - **Professional installer**: Qt-based Calamares installer for easy installation
 - **Gaming optimizations**: Pre-configured with MangoHud, Gamemode, and gaming tools
@@ -113,7 +114,7 @@ sudo dd if=GamebianOS-1.0-amd64.iso of=/dev/sdX bs=4M status=progress
 
 ## Requirements
 
-- Debian Bookworm (or compatible)
+- Debian 13 "Trixie" (or compatible)
 - `live-build` package
 - `calamares` package (from backports)
 - Root/sudo access for building
@@ -121,8 +122,37 @@ sudo dd if=GamebianOS-1.0-amd64.iso of=/dev/sdX bs=4M status=progress
 
 ## License
 
-[Add your license here]
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
-[Add contribution guidelines here]
+We welcome contributions to GamebianOS! However, to ensure quality and maintain project standards, please follow these guidelines:
+
+### Getting Started
+
+1. **Contact the Administrator**: Before making significant changes or starting work on new features, please contact the project administrator to discuss your proposed contribution. This helps ensure your work aligns with project goals and avoids duplicate efforts.
+
+2. **Fork and Clone**: Fork the repository and clone it to your local machine.
+
+3. **Create a Branch**: Create a feature branch for your changes:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+### Contribution Guidelines
+
+- **Code Quality**: Ensure your code follows existing style and conventions
+- **Documentation**: Update relevant documentation for any changes
+- **Testing**: Test your changes thoroughly before submitting
+- **Commit Messages**: Write clear, descriptive commit messages
+- **Pull Requests**: Submit pull requests with a clear description of changes
+
+### Contact
+
+To contribute or discuss potential contributions, please contact the project administrator. This allows us to:
+- Coordinate development efforts
+- Review proposed changes
+- Provide guidance on implementation
+- Grant appropriate access if needed
+
+Thank you for your interest in contributing to GamebianOS!

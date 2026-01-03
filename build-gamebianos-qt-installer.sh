@@ -15,7 +15,7 @@ rm -rf config/auto config/includes.chroot/etc/calamares 2>/dev/null || true
 # Configure live build with Calamares
 lb config \
     --architectures amd64 \
-    --distribution bookworm \
+    --distribution trixie \
     --binary-images iso-hybrid \
     --bootappend-live "boot=live components quiet splash" \
     --debian-installer none \
