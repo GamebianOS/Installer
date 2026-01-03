@@ -1,0 +1,27 @@
+#!/bin/sh
+exec tail -n +3 $0
+
+# GamebianOS Live Boot Menu
+menuentry "GamebianOS Live (Qt Installer)" {
+    linux /live/vmlinuz boot=live components quiet splash
+    initrd /live/initrd.img
+}
+
+menuentry "GamebianOS Live (Steam Test Mode)" {
+    linux /live/vmlinuz boot=live components quiet splash steam.autostart=1
+    initrd /live/initrd.img
+}
+
+menuentry "GamebianOS Live (LXQt Desktop Only)" {
+    linux /live/vmlinuz boot=live components quiet splash desktop.only=1
+    initrd /live/initrd.img
+}
+
+menuentry "GamebianOS Live (Safe Graphics)" {
+    linux /live/vmlinuz boot=live components quiet splash nomodeset
+    initrd /live/initrd.img
+}
+
+menuentry "Memory Test (memtest86+)" {
+    linux16 /live/memtest
+}

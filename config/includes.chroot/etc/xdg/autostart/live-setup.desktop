@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=GamebianOS Live Setup
+Exec=/usr/local/bin/live-desktop-setup
+Icon=system-installer
+Comment=Setup live desktop environment
+X-GNOME-Autostart-enabled=true
+OnlyShowIn=LXQt;

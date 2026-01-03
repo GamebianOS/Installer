@@ -1,0 +1,63 @@
+#!/bin/bash
+# Setup live desktop with installer and Steam options
+
+# Create desktop entries
+cat > /home/gamebian/Desktop/install-gamebian.desktop << 'EOF'
+[Desktop Entry]
+Name=Install GamebianOS
+Comment=Install to your hard drive
+Exec=sudo calamares -d
+Icon=system-installer
+Terminal=false
+Type=Application
+Categories=System;
+EOF
+
+cat > /home/gamebian/Desktop/launch-steam.desktop << 'EOF'
+[Desktop Entry]
+Name=Launch Steam Big Picture
+Comment=Test Steam gaming interface
+Exec=/usr/local/bin/start-steam-bigpicture
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;
+EOF
+
+# Create Live Welcome application
+cat > /usr/share/applications/gamebian-welcome.desktop << 'EOF'
+[Desktop Entry]
+Name=Welcome to GamebianOS
+Comment=Get started with GamebianOS
+Exec=/usr/local/bin/gamebian-welcome
+Icon=distributor-logo
+Terminal=false
+Type=Application
+Categories=System;
+EOF
+
+# Welcome script
+cat > /usr/local/bin/gamebian-welcome << 'EOF'
+#!/bin/bash
+# GamebianOS Live Welcome
+
+zenity --info --title="Welcome to GamebianOS" \
+--text="Welcome to GamebianOS Gaming Edition!\n\n\
+This is the live environment. You can:\n\
+1. Install GamebianOS to your hard drive\n\
+2. Test Steam gaming experience\n\
+3. Try the LXQt desktop\n\n\
+Click the desktop icons to get started." \
+--width=500 --height=300
+EOF
+chmod +x /usr/local/bin/gamebian-welcome
+
+# Set permissions
+chmod +x /home/gamebian/Desktop/*.desktop
+chown -R gamebian:gamebian /home/gamebian/Desktop
+
+# Auto-start welcome on first boot
+if [ ! -f /tmp/welcome-shown ]; then
+    /usr/local/bin/gamebian-welcome &
+    touch /tmp/welcome-shown
+fi

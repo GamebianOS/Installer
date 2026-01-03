@@ -1,0 +1,30 @@
+#!/bin/bash
+# Restart Steam Script
+# Restarts Steam Big Picture mode
+
+export DISPLAY=:0
+export XAUTHORITY=/home/gamebian/.Xauthority
+
+# Kill existing Steam
+pkill -9 steam 2>/dev/null || true
+
+# Wait a moment
+sleep 1
+
+# Start Steam Big Picture
+/usr/bin/steam -bigpicture -steamos -fulldesktopres &
+
+# Wait for Steam to start
+sleep 3
+
+# Focus Steam window
+STEAM_WINDOW=$(xdotool search --class steam 2>/dev/null | head -1)
+if [ -n "$STEAM_WINDOW" ]; then
+    xdotool windowactivate "$STEAM_WINDOW"
+    xdotool windowfocus "$STEAM_WINDOW"
+fi
+
+# Notify user
+if command -v notify-send &> /dev/null; then
+    notify-send "GamebianOS" "Steam Big Picture started"
+fi

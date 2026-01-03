@@ -1,0 +1,36 @@
+---
+componentName:  GamebianOS
+version:        1.0.0
+
+welcomeStyleCalamares:  true
+
+strings:
+    productName:         GamebianOS
+    shortProductName:    GamebianOS
+    version:             1.0 Gaming Edition
+    shortVersion:        1.0
+    bootloaderEntryName: GamebianOS
+    productUrl:          https://gamebian.org
+
+images:
+    productLogo:         "gamebian-logo.png"
+    productIcon:         "gamebian-icon.png"
+    productWelcome:      "welcome.png"
+
+style:
+   sidebarBackground:    "#1a1a1a"
+   sidebarText:          "#ffffff"
+   sidebarTextSelect:    "#00ff00"
+   sidebarTextHighlight: "#007acc"
+
+slideshow:               "show.qml"
+
+showSupportUrl:          false
+showKnownIssuesUrl:      false
+showReleaseNotesUrl:     false
+
+welcome:
+    showSupportUrl:      false
+    showKnownIssuesUrl:  false
+    showReleaseNotesUrl: false
+    showReleaseNotes:    false

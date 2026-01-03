@@ -1,0 +1,29 @@
+#!/bin/bash
+# Exit to Desktop Script
+# Switches from Steam Big Picture to LXQt desktop
+
+export DISPLAY=:0
+export XAUTHORITY=/home/gamebian/.Xauthority
+
+# Kill Steam if running
+pkill -9 steam 2>/dev/null || true
+
+# Start LXQt session
+if command -v startlxqt &> /dev/null; then
+    startlxqt &
+elif [ -f /usr/bin/lxqt-session ]; then
+    /usr/bin/lxqt-session &
+fi
+
+# Wait a moment for desktop to start
+sleep 2
+
+# Show desktop
+if command -v wmctrl &> /dev/null; then
+    wmctrl -k on
+fi
+
+# Notify user
+if command -v notify-send &> /dev/null; then
+    notify-send "GamebianOS" "Switched to LXQt Desktop\nPress Ctrl+Alt+D to return to Steam"
+fi

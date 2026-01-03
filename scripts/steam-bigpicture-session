@@ -1,0 +1,36 @@
+#!/bin/bash
+# Steam Big Picture Session Script
+# This script launches Steam in Big Picture mode as the primary session
+
+# Set up environment
+export DISPLAY=:0
+export XAUTHORITY=/home/gamebian/.Xauthority
+
+# Wait for X to be ready
+while ! xset q &>/dev/null; do
+    sleep 0.5
+done
+
+# Kill any existing Steam processes
+pkill -9 steam 2>/dev/null || true
+
+# Start Steam in Big Picture mode
+/usr/bin/steam -bigpicture -steamos -fulldesktopres &
+
+# Wait for Steam to start
+sleep 3
+
+# Focus Steam window
+STEAM_WINDOW=$(xdotool search --class steam | head -1)
+if [ -n "$STEAM_WINDOW" ]; then
+    xdotool windowactivate "$STEAM_WINDOW"
+    xdotool windowfocus "$STEAM_WINDOW"
+fi
+
+# Keep script running while Steam is running
+while pgrep -x steam > /dev/null; do
+    sleep 1
+done
+
+# If Steam exits, return to desktop
+/usr/local/bin/exit-to-desktop
